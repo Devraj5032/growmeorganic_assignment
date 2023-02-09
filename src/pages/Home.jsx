@@ -8,8 +8,10 @@ const Home = () => {
   const navigate = useNavigate();
 
   const ifUserExist = () => {
-    localStorage.getItem("user_data") === null ? navigate("/login") : "";
-    alert("Enter details berfore login");
+    if (localStorage.getItem("user_data") === null) {
+      alert("Enter details berfore login");
+      navigate("/");
+    }
   };
   console.log(localStorage.getItem("user_data"));
   const fetchData = useCallback(async () => {
@@ -20,7 +22,7 @@ const Home = () => {
 
   const onLogoutClick = () => {
     localStorage.removeItem("user_data");
-    navigate("/Login");
+    navigate("/");
   };
 
   useEffect(() => {

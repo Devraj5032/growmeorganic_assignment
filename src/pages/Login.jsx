@@ -3,7 +3,7 @@ import Form from "../components/Form";
 
 const Login = () => {
   return (
-    <div className=" border-black p-6 border-[1px] rounded-lg">
+    <div className=" border-black p-2 border-[1px] rounded-lg">
       <Form />
     </div>
   );

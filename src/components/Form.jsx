@@ -16,9 +16,13 @@ const Form = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
-    localStorage.setItem("user_data", user);
-    navigate("/");
+    console.log(user.name)
+    if (user.name === undefined || user.email === undefined || user.phone === undefined) {
+      alert('Enter all details')
+    } else {
+      localStorage.setItem("user_data", user);
+    navigate("/home");
+    }
   };
 
   return (
